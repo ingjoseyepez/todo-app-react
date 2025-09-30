@@ -1,8 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [tareas, setTareas] = useState([]);
+  const [tareas, setTareas] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("tareas")) || [];
+    } catch {
+      return [];
+    }
+  });
+
   const [nuevaTarea, setNuevaTarea] = useState("");
+
+  useEffect(() => {
+    try {
+      localStorage.setItem("tareas", JSON.stringify(tareas));
+      console.log("Guardado en localStorage:", tareas);
+    } catch (error) {
+      console.error("Error al guardar:", error);
+    }
+  }, [tareas]);
 
   const agregarTarea = () => {
     if (nuevaTarea.trim() === "") return;
@@ -24,6 +40,7 @@ function App() {
           placeholder="Escribe una tarea"
           value={nuevaTarea}
           onChange={(e) => setNuevaTarea(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && agregarTarea()}
         />
         <button onClick={agregarTarea}>Agregar</button>
       </div>
