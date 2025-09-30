@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import TaskInput from "./components/TaskInput";
+import TaskList from "./components/TaskList";
 import "./App.css";
 
 function App() {
+  // Estado inicial cargado desde localStorage
   const [tareas, setTareas] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("tareas")) || [];
@@ -12,7 +15,7 @@ function App() {
 
   const [nuevaTarea, setNuevaTarea] = useState("");
 
-  // Guardar tareas cada vez que cambien
+  // Guardar historial cuando cambian las tareas
   useEffect(() => {
     localStorage.setItem("tareas", JSON.stringify(tareas));
   }, [tareas]);
@@ -38,36 +41,16 @@ function App() {
   return (
     <div>
       <h1>Lista de Tareas</h1>
-      <div>
-        <input
-          type="text"
-          placeholder="Escribe una tarea"
-          value={nuevaTarea}
-          onChange={(e) => setNuevaTarea(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && agregarTarea()}
-        />
-        <button onClick={agregarTarea}>Agregar</button>
-      </div>
-
-      <ul>
-        {tareas.map((tarea, index) => (
-          <li key={index}>
-            <input
-              type="checkbox"
-              checked={tarea.completada}
-              onChange={() => toggleCompletada(index)}
-            />
-            <span
-              style={{
-                textDecoration: tarea.completada ? "line-through" : "none",
-              }}
-            >
-              {tarea.texto}
-            </span>
-            <button onClick={() => eliminarTarea(index)}>❌</button>
-          </li>
-        ))}
-      </ul>
+      <TaskInput
+        nuevaTarea={nuevaTarea}
+        setNuevaTarea={setNuevaTarea}
+        agregarTarea={agregarTarea}
+      />
+      <TaskList
+        tareas={tareas}
+        toggleCompletada={toggleCompletada}
+        eliminarTarea={eliminarTarea}
+      />
     </div>
   );
 }
