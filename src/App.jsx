@@ -1,10 +1,10 @@
+
 import { useState, useEffect } from "react";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
-import "./App.css";
+import styles from "./App.module.css";
 
 function App() {
-  // Estado inicial cargado desde localStorage
   const [tareas, setTareas] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem("tareas")) || [];
@@ -15,7 +15,6 @@ function App() {
 
   const [nuevaTarea, setNuevaTarea] = useState("");
 
-  // Guardar historial cuando cambian las tareas
   useEffect(() => {
     localStorage.setItem("tareas", JSON.stringify(tareas));
   }, [tareas]);
@@ -28,8 +27,7 @@ function App() {
   };
 
   const eliminarTarea = (index) => {
-    const nuevasTareas = tareas.filter((_, i) => i !== index);
-    setTareas(nuevasTareas);
+    setTareas(tareas.filter((_, i) => i !== index));
   };
 
   const toggleCompletada = (index) => {
@@ -39,8 +37,8 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Lista de Tareas</h1>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Lista de Tareas</h1>
       <TaskInput
         nuevaTarea={nuevaTarea}
         setNuevaTarea={setNuevaTarea}
