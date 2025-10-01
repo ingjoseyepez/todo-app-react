@@ -7,7 +7,7 @@ Este proyecto forma parte de un **camino de aprendizaje paso a paso**, aplicando
 
 ## 📸 Captura de Pantalla
 
-![Captura de la aplicación](./screenshot.png)
+![Captura de la aplicación](./src/assets/vista.png)
 
 > *(Reemplaza `screenshot.png` con una captura real de tu proyecto y súbela en la raíz del repo).*
 
