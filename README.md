@@ -1,17 +1,42 @@
-# React + Vite
+# 📝 To-Do App (Lista de Tareas en React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación sencilla de lista de tareas desarrollada con **React + Vite**.  
+Este proyecto forma parte de un **camino de aprendizaje paso a paso**, aplicando **conceptos básicos, intermedios y buenas prácticas** de React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Captura de Pantalla
 
-## React Compiler
+![Captura de la aplicación](./screenshot.png)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+> *(Reemplaza `screenshot.png` con una captura real de tu proyecto y súbela en la raíz del repo).*
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# todo-app-react
+## 🚀 Funcionalidades
+
+- ✅ Agregar nuevas tareas.  
+- ✅ Marcar tareas como completadas.  
+- ✅ Eliminar tareas de la lista.  
+- ✅ Guardar historial en **LocalStorage** (las tareas no se pierden al recargar).  
+- ✅ Estilos aplicados con **CSS Modules** para mantener el código organizado.  
+
+---
+
+## 🛠️ Tecnologías usadas
+
+- [React](https://react.dev/) (con Hooks `useState` y `useEffect`)  
+- [Vite](https://vitejs.dev/) para el entorno de desarrollo rápido  
+- CSS Modules (`.module.css`) para estilos locales y organizados  
+
+---
+
+## 🧠 Conceptos de React aplicados
+
+- **useState** → manejo de estado (lista de tareas, input del usuario).  
+- **useEffect** → sincronización con LocalStorage.  
+- **Props** → pasar funciones y valores entre componentes.  
+- **Componentes reutilizables** → separación en `TaskInput`, `TaskList`, `TaskItem`.  
+- **CSS Modules** → estilos aislados por componente.  
+
+---
