@@ -1,8 +1,9 @@
 import TaskItem from "./TaskItem";
+import styles from "./TaskList.module.css"; // Importa CSS Module
 
 function TaskList({ tareas, toggleCompletada, eliminarTarea }) {
   return (
-    <ul>
+    <ul className={styles.lista}>
       {tareas.map((tarea, index) => (
         <TaskItem
           key={index}
@@ -10,6 +11,7 @@ function TaskList({ tareas, toggleCompletada, eliminarTarea }) {
           index={index}
           toggleCompletada={toggleCompletada}
           eliminarTarea={eliminarTarea}
+          className={styles.item} // Pasamos clase al TaskItem si quieres usarla ahí
         />
       ))}
     </ul>
@@ -17,3 +19,4 @@ function TaskList({ tareas, toggleCompletada, eliminarTarea }) {
 }
 
 export default TaskList;
+

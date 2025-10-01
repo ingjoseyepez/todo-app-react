@@ -1,15 +1,25 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background: #688AFF;
+  background: linear-gradient(35deg, rgba(104, 138, 255, 1) 50%, rgba(220, 220, 220, 1) 50%);
+}
+
 .container {
-    max-width: 400px;
-    margin: 40px auto;
-    padding: 16px;
-    border-radius: 8px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .title {
-    text-align: center;
-    color: #111827;
-    margin-bottom: 20px;
-  }
-  
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  color: #111827;
+  margin-bottom: 20px;
+}
